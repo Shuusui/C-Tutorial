@@ -27,10 +27,13 @@
     <ClCompile Include="src\LoopManager.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\include\PlayerMelee.cpp">
+    <ClCompile Include="src\Enemy.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\EnemyMelee.cpp">
+    <ClCompile Include="src\include\Player.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\include\Boss.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,13 +53,16 @@
     <ClInclude Include="src\include\Boss.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\Melee.h">
+    <ClInclude Include="src\include\GlobalEnums.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\PlayerMelee.h">
+    <ClInclude Include="src\include\Player.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\EnemyMelee.h">
+    <ClInclude Include="src\include\Enemy.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Map.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

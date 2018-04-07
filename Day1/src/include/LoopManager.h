@@ -1,5 +1,6 @@
 #pragma once
-#include "Character.h"
+#include "Player.h"
+
 
 #include <iostream>
 
@@ -20,7 +21,7 @@ namespace Day1
 		private: 
 			static LoopManager* s_pLoopManager;
 			LoopManager();
-
+			Player* m_pPlayer;
 			
 
 

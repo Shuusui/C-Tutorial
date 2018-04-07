@@ -1,13 +1,13 @@
 #pragma once
 
 
-#include "EnemyMelee.h"
+#include "Enemy.h"
 
 namespace Day1
 {
 	namespace Mainframework
 	{
-		class Boss : public EnemyMelee
+		class Boss : public Enemy
 		{
 			Boss(); 
 			virtual ~Boss(); 

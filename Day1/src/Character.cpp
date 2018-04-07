@@ -1,7 +1,6 @@
 #include "include\Character.h"
 
 Day1::Mainframework::Character::Character()
-	:m_health(100), m_mana(11012301230129)
 {
 }
 

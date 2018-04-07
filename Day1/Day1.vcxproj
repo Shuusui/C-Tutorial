@@ -117,21 +117,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Character.cpp" />
-    <ClCompile Include="src\EnemyMelee.cpp" />
+    <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\GameLoop.cpp" />
-    <ClCompile Include="src\include\PlayerMelee.cpp" />
+    <ClCompile Include="src\include\Boss.cpp" />
+    <ClCompile Include="src\include\Player.cpp" />
     <ClCompile Include="src\LoopManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\include\Boss.h" />
-    <ClInclude Include="src\include\EnemyMelee.h" />
+    <ClInclude Include="src\include\Enemy.h" />
     <ClInclude Include="src\include\GameLoop.h" />
+    <ClInclude Include="src\include\GlobalEnums.h" />
     <ClInclude Include="src\include\GlobalStructs.h" />
     <ClInclude Include="src\include\LoopManager.h" />
     <ClInclude Include="src\include\Character.h" />
-    <ClInclude Include="src\include\Melee.h" />
-    <ClInclude Include="src\include\PlayerMelee.h" />
+    <ClInclude Include="src\include\Map.h" />
+    <ClInclude Include="src\include\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
