@@ -1,30 +1,30 @@
 #include "include\Enemy.h"
 
-Day1::Mainframework::Enemy::Enemy(const std::string& name, const GlobalEnums::EAttackTypes& type)
+C_Tut::Mainframework::Enemy::Enemy(const std::string& name, const GlobalEnums::EAttackTypes& type)
 	:m_attackType(type)
 {
 }
 
-Day1::Mainframework::Enemy::~Enemy()
+C_Tut::Mainframework::Enemy::~Enemy()
 {
 }
 
-void Day1::Mainframework::Enemy::Attack()
+void C_Tut::Mainframework::Enemy::Attack()
 {
 
 }
 
-Day1::Mainframework::GlobalEnums::EAttackTypes Day1::Mainframework::Enemy::GetAttackType() const
+C_Tut::Mainframework::GlobalEnums::EAttackTypes C_Tut::Mainframework::Enemy::GetAttackType() const
 {
 	return m_attackType;
 }
 
-bool Day1::Mainframework::Enemy::AttackRange()
+bool C_Tut::Mainframework::Enemy::AttackRange()
 {
 	return false;
 }
 
-bool Day1::Mainframework::Enemy::AttackMelee()
+bool C_Tut::Mainframework::Enemy::AttackMelee()
 {
 	return false;
 }

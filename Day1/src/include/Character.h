@@ -1,8 +1,9 @@
 #pragma once
 
 #include "GlobalStructs.h"
+#include "Pos.h"
 
-namespace Day1
+namespace C_Tut
 {
 	namespace Mainframework
 	{

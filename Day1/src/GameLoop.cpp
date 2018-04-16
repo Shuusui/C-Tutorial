@@ -1,13 +1,13 @@
 #include "include\GameLoop.h"
 
 
-Day1::Mainframework::GameLoop::GameLoop()
+C_Tut::Mainframework::GameLoop::GameLoop()
 {
 	LoopManager::Init();
 }
 
 
-bool Day1::Mainframework::GameLoop::Init()
+bool C_Tut::Mainframework::GameLoop::Init()
 {
 	const char* text = "Hello. ";
 	
@@ -16,7 +16,7 @@ bool Day1::Mainframework::GameLoop::Init()
 	return true;
 }
 
-void Day1::Mainframework::GameLoop::Run()
+void C_Tut::Mainframework::GameLoop::Run()
 {
 	bool wait = false; 
 	std::string str;
@@ -34,6 +34,6 @@ void Day1::Mainframework::GameLoop::Run()
 	}
 }
 
-Day1::Mainframework::GameLoop::~GameLoop()
+C_Tut::Mainframework::GameLoop::~GameLoop()
 {
 }

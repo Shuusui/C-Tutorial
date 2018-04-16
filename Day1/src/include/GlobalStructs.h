@@ -2,7 +2,7 @@
 #include "Character.h"
 #include <string>
 #include <map>
-namespace Day1
+namespace C_Tut
 {
 	namespace Mainframework
 	{
@@ -43,17 +43,6 @@ namespace Day1
 		{
 			WeaponSet WPSet;
 			ArmorSet ArmorSet;
-		};
-
-		struct Pos
-		{
-		public:
-			int X;
-			int Y;
-			bool operator==(const Pos& pos)
-			{
-				return X == pos.X && Y == pos.Y ? true : false;
-			}
 		};
 
 	}

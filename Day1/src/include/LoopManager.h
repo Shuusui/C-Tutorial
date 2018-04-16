@@ -1,10 +1,10 @@
 #pragma once
 #include "Player.h"
-
+#include "Map.h"
 
 #include <iostream>
 
-namespace Day1
+namespace C_Tut
 {
 	namespace Mainframework
 	{

@@ -4,12 +4,13 @@
 #include "GlobalStructs.h"
 #include "Character.h"
 
-namespace Day1
+namespace C_Tut
 {
 	namespace Mainframework
 	{
 		class Map
 		{
+		public:
 			Map(int x, int y)
 			{
 				Width = x;
@@ -17,20 +18,20 @@ namespace Day1
 			}
 		private:
 
-			std::map<Pos, Character*> chars;
+			std::map<std::pair<int, int>, Character*> chars;
 			int Width;
 			int Height;
-			void SetCharacter(const Pos& pos, Character* chr)
+			void SetCharacter(const std::pair<int, int> pos, Character* chr)
 			{
-				for (std::map<Pos, Character*>::iterator it = chars.begin(); it != chars.end(); ++it)
+				for (std::map<std::pair<int, int>, Character*>::iterator it = chars.begin(); it != chars.end(); ++it)
 				{
-					Pos currPos = it->first;
+					std::pair<int, int> currPos = it->first;
 					if (currPos == pos)
 						return;
 				}
-				chars.insert(std::pair<Pos, Character*>(pos, chr));
+				chars.insert(std::pair<std::pair<int, int>, Character*>(pos, chr));
 			}
-			std::map<Pos, Character*> GetCharacter()const { return chars; }
+			std::map<std::pair<int, int>, Character*> GetCharacter()const { return chars; }
 		};
 	}
 }

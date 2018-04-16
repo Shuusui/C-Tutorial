@@ -1,7 +1,7 @@
 #include "include\LoopManager.h"
-Day1::Mainframework::LoopManager* Day1::Mainframework::LoopManager::s_pLoopManager = nullptr;
+C_Tut::Mainframework::LoopManager* C_Tut::Mainframework::LoopManager::s_pLoopManager = nullptr;
 
-bool Day1::Mainframework::LoopManager::Init()
+bool C_Tut::Mainframework::LoopManager::Init()
 {
 	if (s_pLoopManager == nullptr)
 	{
@@ -11,7 +11,7 @@ bool Day1::Mainframework::LoopManager::Init()
 	return false; 
 }
 
-void Day1::Mainframework::LoopManager::GameStart()
+void C_Tut::Mainframework::LoopManager::GameStart()
 {
 	std::cout << "Bitte Namen eingeben: \n";
 	std::string name;
@@ -30,22 +30,22 @@ void Day1::Mainframework::LoopManager::GameStart()
 
 }
 
-Day1::Mainframework::LoopManager::~LoopManager()
+C_Tut::Mainframework::LoopManager::~LoopManager()
 {
 	s_pLoopManager = nullptr; 
 }
 
-void Day1::Mainframework::LoopManager::Release()
+void C_Tut::Mainframework::LoopManager::Release()
 {
 	delete s_pLoopManager;
 }
 
-Day1::Mainframework::LoopManager & Day1::Mainframework::LoopManager::GetInstance()
+C_Tut::Mainframework::LoopManager & C_Tut::Mainframework::LoopManager::GetInstance()
 {
 	return *s_pLoopManager;
 }
 
-Day1::Mainframework::LoopManager::LoopManager()
+C_Tut::Mainframework::LoopManager::LoopManager()
 	:m_pPlayer(nullptr)
 {
 	s_pLoopManager = this;

@@ -3,7 +3,7 @@
 #include "Character.h"
 #include "GlobalEnums.h"
 
-namespace Day1
+namespace C_Tut
 {
 	namespace Mainframework
 	{

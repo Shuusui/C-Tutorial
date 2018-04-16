@@ -1,29 +1,29 @@
 #include "include\Character.h"
 
-Day1::Mainframework::Character::Character()
+C_Tut::Mainframework::Character::Character()
 {
 }
 
-Day1::Mainframework::Character::~Character()
+C_Tut::Mainframework::Character::~Character()
 {
 }
 
-Day1::Mainframework::Pos Day1::Mainframework::Character::GetPosition() const
+C_Tut::Mainframework::Pos C_Tut::Mainframework::Character::GetPosition() const
 {
 	return m_position;
 }
 
-int Day1::Mainframework::Character::GetHealth() const
+int C_Tut::Mainframework::Character::GetHealth() const
 {
 	return m_health;
 }
 
-int Day1::Mainframework::Character::GetMana() const
+int C_Tut::Mainframework::Character::GetMana() const
 {
 	return m_mana;
 }
 
-Day1::Mainframework::Equipment Day1::Mainframework::Character::GetEquip() const
+C_Tut::Mainframework::Equipment C_Tut::Mainframework::Character::GetEquip() const
 {
 	return m_equip;
 }

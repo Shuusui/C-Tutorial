@@ -3,7 +3,7 @@
 
 int main()
 {
-	Day1::Mainframework::GameLoop* gameLoop = new Day1::Mainframework::GameLoop();
+	C_Tut::Mainframework::GameLoop* gameLoop = new C_Tut::Mainframework::GameLoop();
 	gameLoop->Init();
 	gameLoop->Run();
 
