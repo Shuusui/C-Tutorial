@@ -50,6 +50,9 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 							break;
 						case 2:
 							object = new Enemy("Archer", GlobalEnums::EAttackTypes::Range);
+						case 3:
+							Player * m_pPlayer = new Player("Lukas", GlobalEnums::EAttackTypes::Range);
+							//object = new Player();
 						}
 						map->SetCharacter(Pos(i, index), object);
 					}

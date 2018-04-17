@@ -23,8 +23,9 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 		attackType = GlobalEnums::EAttackTypes::Melee;
 	else if (type == "Range" || type == "range")
 		attackType = GlobalEnums::EAttackTypes::Range;
-
-	Player* m_pPlayer = new Player(name, attackType);
+	
+	
+	//Player* m_pPlayer = new Player(name, attackType);
 	Map* map = Map::LoadMap(".//Maps");
 	
 
