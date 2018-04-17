@@ -3,11 +3,13 @@
 C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
 {
 	CreateDirectory(".//Maps", NULL);
-
+	Map* defaultMap = new Map(10, 10);
 	std::fstream fileStream; 
 	fileStream.open(".//Maps//Map.txt",std::fstream::in);
 	if(fileStream.is_open())
 	{
+		Map* map = new Map(0,0);
+
 		fileStream.seekg(0, fileStream.end); 
 		size_t size = fileStream.tellg();
 		fileStream.seekg(0, fileStream.beg);
@@ -17,7 +19,7 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 
 		unsigned int index = 0;
 
-		Map* map;
+		
 
 		int x = 0; 
 		int y = 0;
@@ -39,7 +41,7 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 				{
 					if (strBuffer[i] != ' ')
 					{
-						Objects* object; 
+						Objects* object = nullptr;
 						switch (strBuffer[i])
 						{
 						case 0: 
@@ -55,17 +57,17 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 		}
 
 
-		return true;
+		return map;
 	}
 	else
 	{
 		fileStream.open(".//Maps//Map.txt", std::fstream::out);
 		if (!fileStream.is_open())
 		{
-			return false;
+			return nullptr;
 		}
 
 	}
 	fileStream.close();
-	return true;
+	return defaultMap;
 }
