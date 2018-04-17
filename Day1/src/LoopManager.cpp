@@ -25,8 +25,10 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 		attackType = GlobalEnums::EAttackTypes::Melee;
 	else if (type == "Range" || type == "range")
 		attackType = GlobalEnums::EAttackTypes::Range;
+	
+	Map* map = Map::LoadMap(".//Maps");
 
-	Player* m_pPlayer = new Player(name, attackType);
+	std::map<std::pair<int, int>, Objects*>currMap =  map->GetCharacter();
 
 	std::cout << "Willkommen " + name + "\n";
 

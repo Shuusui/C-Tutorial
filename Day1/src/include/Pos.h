@@ -1,20 +1,29 @@
 #pragma once
 
+#include <cmath>
+
 namespace C_Tut
 {
 	namespace Mainframework
 	{
-		class Pos
+		struct Pos
 		{
 		public:
 			int X;
 			int Y;
 
 			Pos(int x, int y) : X(x), Y(y) {};
+			Pos() :X(0), Y(0) {};
+
+
 
 			inline bool operator==(const Pos& pos) const
 			{
 				return X == pos.X && Y == pos.Y ? true : false;
+			}
+			inline bool operator!=(const Pos& pos) const
+			{
+				return X != pos.X || Y != pos.Y ? true : false; 
 			}
 			inline bool operator<(const Pos& pos) const
 			{
