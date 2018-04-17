@@ -8,6 +8,9 @@
 #include "EmptyField.h"
 #include "Wall.h"
 #include "Pos.h"
+#include "Enemy.h"
+#include "Map.h"
+#include "Player.h"
 
 namespace C_Tut
 {
