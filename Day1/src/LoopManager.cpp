@@ -24,12 +24,7 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 	else if (type == "Range" || type == "range")
 		attackType = GlobalEnums::EAttackTypes::Range;
 	
-	
-	//Player* m_pPlayer = new Player(name, attackType);
 	Map* map = Map::LoadMap(".//Maps");
-	
-
-
 }
 
 C_Tut::Mainframework::LoopManager::~LoopManager()

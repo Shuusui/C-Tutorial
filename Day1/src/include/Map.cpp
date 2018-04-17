@@ -1,5 +1,6 @@
 #include "Map.h"
 
+
 C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
 {
 	CreateDirectory(filePath.c_str(), NULL);
