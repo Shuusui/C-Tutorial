@@ -2,10 +2,10 @@
 
 C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
 {
-	CreateDirectory(".//Maps", NULL);
+	CreateDirectory(filePath.c_str(), NULL);
 	Map* defaultMap = new Map(10, 10);
 	std::fstream fileStream; 
-	fileStream.open(".//Maps//Map.txt",std::fstream::in);
+	fileStream.open(filePath + "//Map.txt",std::fstream::in);
 	if(fileStream.is_open())
 	{
 		Map* map = new Map(0,0);
@@ -18,8 +18,6 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 		std::string strBuffer;
 
 		unsigned int index = 0;
-
-		
 
 		int x = 0; 
 		int y = 0;
@@ -47,6 +45,18 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 						case 0: 
 							object = new EmptyField();
 							break;
+						case 1:
+							object = new Wall();
+							break;
+						case 2:
+							object = new Enemy("Archer", GlobalEnums::EAttackTypes::Range);
+							break;
+						case 3:
+							object = new Player("Lukas", GlobalEnums::EAttackTypes::Range);
+							break;
+						default:
+							printf("Nummer aus Maps.txt nicht bekannt");
+							return nullptr;
 						}
 						map->SetCharacter(Pos(i, index), object);
 					}
@@ -61,7 +71,7 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 	}
 	else
 	{
-		fileStream.open(".//Maps//Map.txt", std::fstream::out);
+		fileStream.open(filePath + "//Map.txt", std::fstream::out);
 		if (!fileStream.is_open())
 		{
 			return nullptr;
