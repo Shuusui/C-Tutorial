@@ -17,13 +17,17 @@ namespace C_Tut
 
 			int GetHealth()const;  
 			int GetMana() const; 
+			Pos GetPos() const;
 			//Equipment GetEquip() const; 
+
+			void SetPos(Pos pos);
 
 			
 		private: 
 			int m_health; 
 			int m_mana; 
-			
+			Pos m_pos;
+
 			//Equipment m_equip;
 
 			
