@@ -1,14 +1,14 @@
 #include "Map.h"
 
+
 C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
 {
-	CreateDirectory(".//Maps", NULL);
-	Map* defaultMap = new Map(10, 10);
+	CreateDirectory(filePath.c_str(), NULL);
+	Map* map = nullptr;
 	std::fstream fileStream; 
-	fileStream.open(".//Maps//Map.txt",std::fstream::in);
+	fileStream.open(filePath + "//Map.txt",std::fstream::in);
 	if(fileStream.is_open())
 	{
-		Map* map = new Map(0,0);
 
 		fileStream.seekg(0, fileStream.end); 
 		size_t size = fileStream.tellg();
@@ -18,8 +18,6 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 		std::string strBuffer;
 
 		unsigned int index = 0;
-
-		
 
 		int x = 0; 
 		int y = 0;
@@ -34,9 +32,9 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 				break;
 			case 1: 
 				y = atoi(strBuffer.c_str());
+				map = new Map(x, y);
 				break;
 			default: 
-				map = new Map(x, y);
 				for (int i = 0; i < strBuffer.size(); i++)
 				{
 					if (strBuffer[i] != ' ')
@@ -44,11 +42,23 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 						Objects* object = nullptr;
 						switch (strBuffer[i])
 						{
-						case 0: 
+						case '0': 
 							object = new EmptyField();
 							break;
+						case '1':
+							object = new Wall();
+							break;
+						case '2':
+							object = new Enemy("Archer", GlobalEnums::EAttackTypes::Range);
+							break;
+						case '3':
+							object = new Player("Lukas", GlobalEnums::EAttackTypes::Range);
+							break;
+						default:
+							printf("Nummer aus Maps.txt nicht bekannt");
+							return nullptr;
 						}
-						map->SetCharacter(Pos(i, index), object);
+						map->SetCharacter(std::pair<int, int>(i/2, index-2), object);
 					}
 				}
 				break;
@@ -61,7 +71,7 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 	}
 	else
 	{
-		fileStream.open(".//Maps//Map.txt", std::fstream::out);
+		fileStream.open(filePath + "//Map.txt", std::fstream::out);
 		if (!fileStream.is_open())
 		{
 			return nullptr;
@@ -69,5 +79,5 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 
 	}
 	fileStream.close();
-	return defaultMap;
+	return map;
 }
