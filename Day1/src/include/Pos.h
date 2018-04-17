@@ -13,7 +13,7 @@ namespace C_Tut
 			int Y;
 
 			Pos(int x, int y) : X(x), Y(y) {};
-			Pos() :X(0), Y(0) {};
+			Pos() :X(1), Y(1) {};
 
 
 

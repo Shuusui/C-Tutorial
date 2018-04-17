@@ -9,9 +9,8 @@ C_Tut::Mainframework::GameLoop::GameLoop()
 
 bool C_Tut::Mainframework::GameLoop::Init()
 {
-	const char* text = "Hello. ";
-	
-	std::cout << text;
+	std::cout << "Type Start to Start the Game. \n";
+
 
 	return true;
 }
@@ -20,6 +19,7 @@ void C_Tut::Mainframework::GameLoop::Run()
 {
 	bool wait = false; 
 	std::string str;
+
 	for(;;)
 	{
 		if (!wait)

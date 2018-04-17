@@ -13,6 +13,9 @@ namespace C_Tut
 		public: 
 			static bool Init();
 			void GameStart();
+			void Walk(Player* Player);
+			void Fight();
+
 			~LoopManager(); 
 			static void Release();
 			static LoopManager& GetInstance();

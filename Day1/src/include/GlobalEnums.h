@@ -16,7 +16,8 @@ namespace C_Tut
 			enum class EFieldTypes
 			{
 				Empty = 0, 
-				Wall, 
+				Wall,
+				Character
 
 			};
 		};
