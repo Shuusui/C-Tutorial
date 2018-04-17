@@ -47,7 +47,8 @@ namespace C_Tut
 			/// <summary>Searches for the position of a specific character.</summary>
 			/// <remarks>Searches for the position of a specific character, to return it's position</remarks>
 			/// <returns>Position of requested character</returns>
-		std::pair<int,int> GetCharacter(const Objects* chr){
+
+			std::pair<int, int> GetCharacter(const Objects* chr){
 				for (std::map<std::pair<int, int>, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
 				{
 					if (it->second == chr)
