@@ -25,7 +25,7 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 		attackType = GlobalEnums::EAttackTypes::Range;
 
 	Player* m_pPlayer = new Player(name, attackType);
-	Map* map = Map::LoadMap("");
+	Map* map = Map::LoadMap(".//Maps");
 	
 
 
