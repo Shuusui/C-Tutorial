@@ -71,5 +71,14 @@
     <ClInclude Include="src\include\Pos.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\Objects.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Wall.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\EmptyField.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
