@@ -4,6 +4,9 @@
 #include "GlobalStructs.h"
 #include "Character.h"
 #include <fstream>
+#include <Windows.h>
+#include "EmptyField.h"
+#include "Wall.h"
 
 namespace C_Tut
 {
@@ -17,24 +20,24 @@ namespace C_Tut
 				Width = x;
 				Height = y;
 			}
-			void SetCharacter(const std::pair<int, int> pos, Character* chr)
+			void SetCharacter(const std::pair<int, int> pos, Objects* chr)
 			{
-				for (std::map<std::pair<int, int>, Character*>::iterator it = chars.begin(); it != chars.end(); ++it)
+				for (std::map<std::pair<int, int>, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
 				{
 					std::pair<int, int> currPos = it->first;
 					if (currPos == pos)
 						return;
 				}
-				chars.insert(std::pair<std::pair<int, int>, Character*>(pos, chr));
+				chars.insert(std::pair<std::pair<int, int>, Objects*>(pos, chr));
 			}
-			std::map<std::pair<int, int>, Character*> GetCharacter()const { return chars; }
+			std::map<std::pair<int, int>, Objects*> GetCharacter()const { return chars; }
 
-			bool LoadMap(const std::string& filePath);
+			static Map* LoadMap(const std::string& filePath);
 		private:
 
 
 
-			std::map<std::pair<int, int>, Character*> chars;
+			std::map<std::pair<int, int>, Objects*> chars;
 			int Width;
 			int Height;
 		};

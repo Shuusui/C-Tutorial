@@ -13,6 +13,12 @@ namespace C_Tut
 				Melee = 0, 
 				Range
 			};
+			enum class EFieldTypes
+			{
+				Empty = 0, 
+				Wall, 
+
+			};
 		};
 	}
 }

@@ -2,12 +2,13 @@
 
 #include "GlobalStructs.h"
 #include "Pos.h"
+#include "Objects.h"
 
 namespace C_Tut
 {
 	namespace Mainframework
 	{
-		class Character
+		class Character : public Objects
 		{
 		public: 
 			Character();
