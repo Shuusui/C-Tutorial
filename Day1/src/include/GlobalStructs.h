@@ -6,6 +6,7 @@ namespace C_Tut
 {
 	namespace Mainframework
 	{
+
 		struct Weapon
 		{
 			std::string Name;

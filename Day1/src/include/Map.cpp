@@ -1,11 +1,71 @@
 #include "Map.h"
 
-bool C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
+C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
 {
-	std::fstream fileStream;
-	fileStream.open(".//Maps/Map.txt");
-	if (!fileStream.is_open()) {
-		return false;
+	CreateDirectory(".//Maps", NULL);
+
+	std::fstream fileStream; 
+	fileStream.open(".//Maps//Map.txt",std::fstream::in);
+	if(fileStream.is_open())
+	{
+		fileStream.seekg(0, fileStream.end); 
+		size_t size = fileStream.tellg();
+		fileStream.seekg(0, fileStream.beg);
+
+		char* buffer = (char*)malloc(size);
+		std::string strBuffer;
+
+		unsigned int index = 0;
+
+		Map* map;
+
+		int x = 0; 
+		int y = 0;
+		while (!fileStream.eof())
+		{
+			fileStream.getline(buffer, size);
+			strBuffer = buffer; 
+			switch (index)
+			{
+			case 0: 
+				x = atoi(strBuffer.c_str());
+				break;
+			case 1: 
+				y = atoi(strBuffer.c_str());
+				break;
+			default: 
+				map = new Map(x, y);
+				for (int i = 0; i < strBuffer.size(); i++)
+				{
+					if (strBuffer[i] != ' ')
+					{
+						Objects* object; 
+						switch (strBuffer[i])
+						{
+						case 0: 
+							object = new EmptyField();
+							break;
+						}
+						map->SetCharacter(std::pair<int, int>(i, index), object);
+					}
+				}
+				break;
+			}
+			index++;
+		}
+
+
+		return true;
 	}
+	else
+	{
+		fileStream.open(".//Maps//Map.txt", std::fstream::out);
+		if (!fileStream.is_open())
+		{
+			return false;
+		}
+
+	}
+	fileStream.close();
 	return true;
 }
