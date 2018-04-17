@@ -19,29 +19,29 @@ namespace C_Tut
 		class Map
 		{
 		public:
+
 			Map(int x, int y)
 			{
 				Width = x;
 				Height = y;
 			}
-			void SetCharacter(const Pos pos, Objects* chr)
+
+			void SetCharacter(const std::pair<int, int>& pos, Objects* chr)
 			{
-				for (std::map<Pos, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
+				for (std::map<std::pair<int, int>, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
 				{
-					Pos currPos = it->first;
+					std::pair<int, int> currPos = it->first;
 					if (currPos == pos)
 						return;
 				}
-				chars.insert(std::pair<Pos, Objects*>(pos, chr));
+				chars.insert(std::pair<std::pair<int, int>, Objects*>(pos, chr));
 			}
-			std::map<Pos, Objects*> GetCharacter()const { return chars; }
+			std::map<std::pair<int, int>, Objects*> GetCharacter()const { return chars; }
 
 			static Map* LoadMap(const std::string& filePath);
 		private:
 
-
-
-			std::map<Pos, Objects*> chars;
+			std::map<std::pair<int, int>, Objects*> chars;
 			int Width;
 			int Height;
 		};
