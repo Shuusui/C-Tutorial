@@ -32,8 +32,6 @@ namespace C_Tut
 			bool LoadMap(const std::string& filePath);
 		private:
 
-
-
 			std::map<std::pair<int, int>, Character*> chars;
 			int Width;
 			int Height;

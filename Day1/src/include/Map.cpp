@@ -2,11 +2,10 @@
 
 bool C_Tut::Mainframework::Map::LoadMap(const std::string & filePath)
 {
-	std::fstream fileStream; 
+	std::fstream fileStream;
 	fileStream.open(".//Maps/Map.txt");
-	if(!fileStream.is_open())
-	{
-		return false; 
+	if (!fileStream.is_open()) {
+		return false;
 	}
 	return true;
 }
