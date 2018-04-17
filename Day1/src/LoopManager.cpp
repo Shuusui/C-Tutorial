@@ -13,11 +13,11 @@ bool C_Tut::Mainframework::LoopManager::Init()
 
 void C_Tut::Mainframework::LoopManager::GameStart()
 {
-	std::cout << "Bitte Namen eingeben: \n";
+	std::cout << "Enter Name: \n";
 	std::string name;
 	std::cin >> name;
 
-	std::cout << "Bitte Typ eingeben: [Melee] [Range] \n";
+	std::cout << "Enter Type: [Melee] [Range] \n";
 	std::string type;
 	std::cin >> type;
 	GlobalEnums::EAttackTypes attackType;
@@ -26,13 +26,9 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 	else if (type == "Range" || type == "range")
 		attackType = GlobalEnums::EAttackTypes::Range;
 	
-	Map* map = Map::LoadMap(".//Maps");
+	Player* m_pPlayer = new Player(name, attackType);
 
-	std::map<std::pair<int, int>, Objects*>currMap =  map->GetCharacter();
-
-	std::cout << "Willkommen " + name + "\n";
-
-
+	std::cout << "Welcome " + name + "\n";
 
 
 
@@ -44,8 +40,8 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 
 void C_Tut::Mainframework::LoopManager::Walk(Player* Player)
 {
-	Map* map = Map::LoadMap("");
-	std::cout << "Wohin m�chtest du laufen ? [R] [L] [O] [U] \n";
+	Map* map = Map::LoadMap(".//Maps");
+	std::cout << "Where do you want to go ? [R] [L] [U] [D] \n";
 	std::string dir;
 	std::cin >> dir;
 
@@ -58,39 +54,43 @@ void C_Tut::Mainframework::LoopManager::Walk(Player* Player)
 	{
 		pos.X -= 1;
 	}
-	else if (dir == "O" || dir == "o")
-	{
-		pos.Y += 1;
-	}
 	else if (dir == "U" || dir == "u")
 	{
 		pos.Y -= 1;
 	}
+	else if (dir == "D" || dir == "d")
+	{
+		pos.Y += 1;
+	}
 	Player->SetPos(pos);
 	std::cout << Player->GetPos().X << Player->GetPos().Y << std::endl;
 
+	std::pair<int, int> posPair (Player->GetPos().X, Player->GetPos().Y) ;
+	std::map<std::pair<int, int>, Objects*> chars = map->GetCharacter();
+	GlobalEnums::EFieldTypes NextField = chars.at(std::pair<int, int>(Player->GetPos().X, Player->GetPos().Y))->GetFieldType();
 
-	std::map<Pos, Objects*> chars = map->GetCharacter();
-	GlobalEnums::EFieldTypes NextField = chars.at(pos)->GetFieldType();
 
 
-
-		/*switch (NextField)
+		switch (NextField)
 		{
-		case Empty:
-			LoopManager::Walk();
+		case GlobalEnums::EFieldTypes::Empty:
+			LoopManager::Walk(Player);
 			break;
-		case EnemyField:
+		case GlobalEnums::EFieldTypes::Wall:
+			LoopManager::GameStart();
+			break;
+
+		case GlobalEnums::EFieldTypes::Character:
 			LoopManager::Fight();
 			break;
-
-		}*/
-		LoopManager::Walk(Player);
+		 
+		}
 
 }
 
 void C_Tut::Mainframework::LoopManager::Fight()
 {
+	std::cout << "You died! \n";
 
 
 }

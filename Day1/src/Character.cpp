@@ -1,7 +1,7 @@
 #include "include\Character.h"
 
 C_Tut::Mainframework::Character::Character()
-	:Objects(GlobalEnums::EFieldTypes::Empty)
+	:Objects(GlobalEnums::EFieldTypes::Character)
 {
 }
 
