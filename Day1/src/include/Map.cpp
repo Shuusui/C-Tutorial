@@ -48,7 +48,7 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 							object = new EmptyField();
 							break;
 						}
-						map->SetCharacter(std::pair<int, int>(i, index), object);
+						map->SetCharacter(Pos(i, index), object);
 					}
 				}
 				break;
