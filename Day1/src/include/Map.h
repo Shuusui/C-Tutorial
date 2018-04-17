@@ -7,6 +7,7 @@
 #include <Windows.h>
 #include "EmptyField.h"
 #include "Wall.h"
+#include "Pos.h"
 #include "Enemy.h"
 
 namespace C_Tut
@@ -21,24 +22,24 @@ namespace C_Tut
 				Width = x;
 				Height = y;
 			}
-			void SetCharacter(const std::pair<int, int> pos, Objects* chr)
+			void SetCharacter(const Pos pos, Objects* chr)
 			{
-				for (std::map<std::pair<int, int>, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
+				for (std::map<Pos, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
 				{
-					std::pair<int, int> currPos = it->first;
+					Pos currPos = it->first;
 					if (currPos == pos)
 						return;
 				}
-				chars.insert(std::pair<std::pair<int, int>, Objects*>(pos, chr));
+				chars.insert(std::pair<Pos, Objects*>(pos, chr));
 			}
-			std::map<std::pair<int, int>, Objects*> GetCharacter()const { return chars; }
+			std::map<Pos, Objects*> GetCharacter()const { return chars; }
 
 			static Map* LoadMap(const std::string& filePath);
 		private:
 
 
 
-			std::map<std::pair<int, int>, Objects*> chars;
+			std::map<Pos, Objects*> chars;
 			int Width;
 			int Height;
 		};
