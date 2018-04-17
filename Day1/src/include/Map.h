@@ -19,26 +19,30 @@ namespace C_Tut
 		class Map
 		{
 		public:
+
 			Map(int x, int y)
 			{
 				Width = x;
 				Height = y;
 			}
 
+
 			/// <summary>Sets a character to a specified position.</summary>
 			/// <remarks>Sets a character to a specified position.</remarks>
 			/// <param name="pos">The position to </param>
 			/// <param name="chr"></param>
-			void SetCharacter(const Pos pos, Objects* chr)
+			void SetCharacter(const std::pair<int, int>& pos, Objects* chr)
 			{
-				for (std::map<Pos, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
+				for (std::map<std::pair<int, int>, Objects*>::iterator it = chars.begin(); it != chars.end(); ++it)
 				{
-					Pos currPos = it->first;
+					std::pair<int, int> currPos = it->first;
 					if (currPos == pos)
 						return;
 				}
-				chars.insert(std::pair<Pos, Objects*>(pos, chr));
+				chars.insert(std::pair<std::pair<int, int>, Objects*>(pos, chr));
 			}
+			std::map<std::pair<int, int>, Objects*> GetCharacter()const { return chars; }
+
 
 			/// <summary>Searches for the position of a specific character.</summary>
 			/// <remarks>Searches for the position of a specific character, to return it's position</remarks>
@@ -64,10 +68,8 @@ namespace C_Tut
 			static Map* LoadMap(const std::string& filePath);
 		private:
 
-
-
 			/// <summary>A map holding all positions and corresponding Objects</summary>
-			std::map<Pos, Objects*> chars;
+			std::map<std::pair<int, int>, Objects*> chars;
 
 			/// <summary>The width of the game map</summary>
 			int Width;

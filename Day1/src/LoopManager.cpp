@@ -25,6 +25,9 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 		attackType = GlobalEnums::EAttackTypes::Range;
 	
 	Map* map = Map::LoadMap(".//Maps");
+
+	std::map<std::pair<int, int>, Objects*>currMap =  map->GetCharacter();
+
 }
 
 C_Tut::Mainframework::LoopManager::~LoopManager()
