@@ -50,9 +50,13 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 							break;
 						case 2:
 							object = new Enemy("Archer", GlobalEnums::EAttackTypes::Range);
+							break;
 						case 3:
-							Player * m_pPlayer = new Player("Lukas", GlobalEnums::EAttackTypes::Range);
-							//object = new Player();
+							object = new Player("Lukas", GlobalEnums::EAttackTypes::Range);
+							break;
+						default:
+							printf("Nummer aus Maps.txt nicht bekannt");
+							return nullptr;
 						}
 						map->SetCharacter(Pos(i, index), object);
 					}
