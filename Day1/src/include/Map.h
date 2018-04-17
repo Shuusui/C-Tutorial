@@ -7,6 +7,7 @@
 #include <Windows.h>
 #include "EmptyField.h"
 #include "Wall.h"
+#include "Enemy.h"
 
 namespace C_Tut
 {

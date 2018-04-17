@@ -45,7 +45,13 @@ C_Tut::Mainframework::Map* C_Tut::Mainframework::Map::LoadMap(const std::string 
 						case 0: 
 							object = new EmptyField();
 							break;
+						case 1:
+							object = new Wall();
+							break;
+						case 2:
+							object = new Enemy("Archer", GlobalEnums::EAttackTypes::Range);
 						}
+						
 						map->SetCharacter(std::pair<int, int>(i, index), object);
 					}
 				}
