@@ -1,7 +1,7 @@
 #include "include\Player.h"
 
 C_Tut::Mainframework::Player::Player(const std::string & name, const GlobalEnums::EAttackTypes & type)
-	: m_attackType(type)
+	: m_attackType(type),Character(name)
 {
 }
 

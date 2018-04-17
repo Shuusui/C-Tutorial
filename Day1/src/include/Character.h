@@ -11,21 +11,24 @@ namespace C_Tut
 		class Character : public Objects
 		{
 		public: 
-			Character();
+			Character(const std::string& name);
 			virtual ~Character();
 			virtual void Attack() = 0;
+
 
 			int GetHealth()const;  
 			int GetMana() const; 
 			//Equipment GetEquip() const; 
-
+			std::string GetName() const { return m_name; }
 			
 		private: 
 			int m_health; 
 			int m_mana; 
+
 			
 			//Equipment m_equip;
-
+		protected:
+			std::string m_name;
 			
 		};
 	}

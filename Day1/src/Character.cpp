@@ -1,7 +1,7 @@
 #include "include\Character.h"
 
-C_Tut::Mainframework::Character::Character()
-	:Objects(GlobalEnums::EFieldTypes::Empty)
+C_Tut::Mainframework::Character::Character(const std::string& name)
+	:Objects(GlobalEnums::EFieldTypes::Empty), m_name(name)
 {
 }
 

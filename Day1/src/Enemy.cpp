@@ -1,7 +1,7 @@
 #include "include\Enemy.h"
 
 C_Tut::Mainframework::Enemy::Enemy(const std::string& name, const GlobalEnums::EAttackTypes& type)
-	:m_attackType(type)
+	:m_attackType(type),Character(name)
 {
 }
 

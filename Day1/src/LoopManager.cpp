@@ -26,9 +26,6 @@ void C_Tut::Mainframework::LoopManager::GameStart()
 
 	Player* m_pPlayer = new Player(name, attackType);
 	Map* map = Map::LoadMap("");
-	
-
-
 }
 
 C_Tut::Mainframework::LoopManager::~LoopManager()
