@@ -14,19 +14,17 @@ namespace C_Tut
 			virtual ~Character();
 			virtual void Attack() = 0;
 
-			Pos GetPosition() const; 
 			int GetHealth()const;  
 			int GetMana() const; 
-			Equipment GetEquip() const; 
+			//Equipment GetEquip() const; 
 
 			
 		private: 
 			int m_health; 
 			int m_mana; 
 			
-			Equipment m_equip;
+			//Equipment m_equip;
 
-			Pos m_position;
 			
 		};
 	}

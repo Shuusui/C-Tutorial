@@ -3,6 +3,7 @@
 #include <map>
 #include "GlobalStructs.h"
 #include "Character.h"
+#include <fstream>
 
 namespace C_Tut
 {
@@ -16,11 +17,6 @@ namespace C_Tut
 				Width = x;
 				Height = y;
 			}
-		private:
-
-			std::map<std::pair<int, int>, Character*> chars;
-			int Width;
-			int Height;
 			void SetCharacter(const std::pair<int, int> pos, Character* chr)
 			{
 				for (std::map<std::pair<int, int>, Character*>::iterator it = chars.begin(); it != chars.end(); ++it)
@@ -32,6 +28,15 @@ namespace C_Tut
 				chars.insert(std::pair<std::pair<int, int>, Character*>(pos, chr));
 			}
 			std::map<std::pair<int, int>, Character*> GetCharacter()const { return chars; }
+
+			bool LoadMap(const std::string& filePath);
+		private:
+
+
+
+			std::map<std::pair<int, int>, Character*> chars;
+			int Width;
+			int Height;
 		};
 	}
 }
